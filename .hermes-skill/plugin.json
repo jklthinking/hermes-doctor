@@ -1,0 +1,32 @@
+{
+  "name": "hermes-doctor",
+  "version": "0.1.3",
+  "description": "Hermes Agent 自诊断与安全自愈插件：体检、药方匹配、修复计划、病历沉淀与飞书消息路由。",
+  "author": {
+    "name": "AtomCollide-AI-陈宇锋团队"
+  },
+  "maintainer": "503496348-ops",
+  "homepage": "https://github.com/503496348-ops/hermes-doctor",
+  "repository": "https://github.com/503496348-ops/hermes-doctor",
+  "license": "GPL-3.0",
+  "agents": [
+    "agents/diagnosis-agent.md",
+    "agents/repair-agent.md",
+    "agents/case-agent.md"
+  ],
+  "skills": [
+    "skills/hermes-check",
+    "skills/prescription-match",
+    "skills/repair-plan",
+    "skills/case-record",
+    "skills/case-search",
+    "skills/feishu-route"
+  ],
+  "keywords": [
+    "hermes",
+    "doctor",
+    "diagnosis",
+    "self-healing",
+    "agent"
+  ]
+}

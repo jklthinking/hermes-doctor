@@ -1,0 +1,21 @@
+.doctor/
+__pycache__/
+*.pyc
+.DS_Store
+*.bak-*
+*.egg-info/
+.pytest_cache/
+
+# === 防御性（v0.1.3-fix 新增）===
+.env
+.env.*
+*.log
+*.log.*
+*.swp
+*.swo
+.vscode/
+.idea/
+*.bak
+*.bak-*
+*.tmp
+case-*.md
