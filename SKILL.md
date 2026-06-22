@@ -25,7 +25,7 @@ Hermes Doctor 是基于 Hermes 自身插件框架重构的 Agent 医生。功能
 不激活的场景：
 
 - 普通聊天或泛化技术科普
-- 用户要修的是 OpenClaw Doctor/皮皮虾医生本体
+- 用户要修的是 皮皮虾医生本体
 - 需要绕过登录、验证码、反爬或限流保护
 
 ## Core Loop
