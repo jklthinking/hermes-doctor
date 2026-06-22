@@ -111,7 +111,7 @@ Hermes Doctor 监听**自然语言触发词**，在飞书 bot 里说：
 
 ### LangChain 风格回调监控系统 (`scripts/callback_handler.py`)
 
-对标 LangChain (139K⭐) 的 BaseCallbackHandler 模式，提供可插拔的逐步骤 Agent 监控：
+参考 BaseCallbackHandler 模式，提供可插拔的逐步骤 Agent 监控：
 
 ```python
 from callback_handler import CollectingHandler, PrintingHandler, chain_context, step_context
@@ -133,7 +133,7 @@ print(collector.summary())          # 聚合统计
 
 ### 多维度健康评分引擎 (`scripts/health_scorer.py`)
 
-对标 Dify (145K⭐) 的 ops 监控，6 个评分维度加权汇总：
+参考 ops 监控，6 个评分维度加权汇总：
 
 | 维度 | 权重 | 说明 |
 |------|------|------|
