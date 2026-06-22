@@ -2,7 +2,7 @@
 name: hermes-doctor
 description: Hermes Agent 自诊断与安全自愈插件。用于 Hermes 插件、Agent、工具调用、运行时、配置、日志、飞书消息路由的体检、药方匹配、修复计划、病历记录和问题复盘。
 version: 0.1.2
-author: AtomCollide-AI-陈宇锋团队
+author: AtomCollide-智械工坊团队
 tags: [hermes, doctor, diagnosis, self-healing, agent]
 requires_tools: [read_file, write_file, patch, search_files, terminal, clarify]
 requires_toolsets: [file, terminal]

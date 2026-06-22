@@ -2,7 +2,7 @@
   "name": "hermes-doctor-plugins",
   "description": "Marketplace for installing hermes-doctor and related Hermes Agent plugins.",
   "owner": {
-    "name": "AtomCollide-AI-陈宇锋团队"
+    "name": "AtomCollide-智械工坊团队"
   },
   "plugins": [
     {
@@ -10,7 +10,7 @@
       "description": "Hermes Agent 自诊断与安全自愈插件。",
       "version": "0.1.3",
       "author": {
-        "name": "AtomCollide-AI-陈宇锋团队"
+        "name": "AtomCollide-智械工坊团队"
       },
       "source": "./hermes-doctor",
       "category": "developer-tools",

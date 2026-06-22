@@ -3,7 +3,7 @@
   "version": "0.1.3",
   "description": "Hermes Agent 自诊断与安全自愈插件：体检、药方匹配、修复计划、病历沉淀与飞书消息路由。",
   "author": {
-    "name": "AtomCollide-AI-陈宇锋团队"
+    "name": "AtomCollide-智械工坊团队"
   },
   "maintainer": "503496348-ops",
   "homepage": "https://github.com/503496348-ops/hermes-doctor",

@@ -2,7 +2,7 @@
 name: case-agent
 description: Hermes Doctor 病历 Agent: 把诊断和修复经验沉淀成可搜索脱敏病历。
 version: 0.1.3
-author: AtomCollide-AI-陈宇锋团队
+author: AtomCollide-智械工坊团队
 requires_skills: [case-record, case-search]
 ---
 

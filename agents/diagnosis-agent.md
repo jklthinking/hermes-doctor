@@ -2,7 +2,7 @@
 name: diagnosis-agent
 description: Hermes Doctor 诊断 Agent: 收集证据、判断严重度、输出小白可读报告。
 version: 0.1.3
-author: AtomCollide-AI-陈宇锋团队
+author: AtomCollide-智械工坊团队
 requires_skills: [hermes-check, prescription-match]
 ---
 

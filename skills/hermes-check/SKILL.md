@@ -2,7 +2,7 @@
 name: hermes-check
 description: Run read-only Hermes Doctor health checks for Hermes plugin structure, manifest validity, subskills, agents, scripts, references, logs, and required local commands.
 version: 0.1.3
-author: AtomCollide-AI-陈宇锋团队
+author: AtomCollide-智械工坊团队
 tags: [hermes, doctor, diagnosis]
 requires_tools: [terminal, read_file]
 requires_toolsets: [terminal, file]

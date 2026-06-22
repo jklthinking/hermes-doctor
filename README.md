@@ -107,6 +107,52 @@ Hermes Doctor 监听**自然语言触发词**，在飞书 bot 里说：
 
 ---
 
+## 🆕 v0.2.0 新增能力
+
+### LangChain 风格回调监控系统 (`scripts/callback_handler.py`)
+
+对标 LangChain (139K⭐) 的 BaseCallbackHandler 模式，提供可插拔的逐步骤 Agent 监控：
+
+```python
+from callback_handler import CollectingHandler, PrintingHandler, chain_context, step_context
+
+collector = CollectingHandler()
+printer = PrintingHandler()
+
+with chain_context([collector, printer], "agent_diagnosis", {"target": "."}) as chain:
+    with step_context([collector, printer], "gateway_health", "tool") as step:
+        result = do_check()
+        step.set_output(result)
+    chain.set_output({"score": 100})
+
+print(collector.get_trace_json())  # JSON 导出
+print(collector.summary())          # 聚合统计
+```
+
+支持：Chain/LLM/Tool/Retriever 四种步骤类型、父子关系追踪、线程安全、JSON 导出。
+
+### 多维度健康评分引擎 (`scripts/health_scorer.py`)
+
+对标 Dify (145K⭐) 的 ops 监控，6 个评分维度加权汇总：
+
+| 维度 | 权重 | 说明 |
+|------|------|------|
+| 项目结构 | 25% | plugin.json、SKILL.md、目录完整性 |
+| 运行时健康 | 20% | 日志错误、进程状态 |
+| 安全合规 | 20% | .env 管理、凭证脱敏 |
+| 依赖可用性 | 15% | python3、rg 等工具可用性 |
+| 性能指标 | 10% | 响应延迟 |
+| 可观测性 | 10% | trace/callback 系统完整性 |
+
+```bash
+python3 scripts/health_scorer.py .          # 独立运行
+python3 scripts/hermes_doctor.py check --target . --format json  # CLI 集成
+```
+
+输出等级：A+ / A / B / C / D / F，附带趋势分析和修复建议。
+
+---
+
 ## 📋 常用命令速查
 
 | 你想做什么 | 跑这个（macOS / Linux）| 跑这个（Windows） |
@@ -178,6 +224,9 @@ hermes-doctor/
     feishu-route/                  # 飞书消息路由
   scripts/
     hermes_doctor.py               # 本地 CLI 总入口
+    callback_handler.py            # LangChain 风格回调监控系统 (NEW v0.2.0)
+    health_scorer.py               # 多维度健康评分引擎 (NEW v0.2.0)
+    trace_observability.py         # 基于 Trace 的可观测性
     bailongma-doctor               # macOS/Linux 包装命令
     bailongma-doctor.cmd           # Windows 包装命令
   references/
@@ -262,3 +311,58 @@ bailongma-doctor test --target .            # 预期: summary: 14/14 passed
 - `references/safety_policy.md` — 风险等级 + 脱敏策略
 - `references/test_cases.md` — 验收清单
 - `references/output_formats.md` — 命令输出格式规范
+
+---
+
+
+
+---
+
+## 🚀 加入AtomCollide-AI智能体实验室
+
+**元素碰撞-AtomCollide-AI 智能体实验室** 是一个专注于AI领域的开源组织，汇聚了众多优秀学习者。
+
+### 核心价值
+
+**找工作：更省力，也更精准**
+- 一线大厂内推通道（字节、阿里、腾讯等）
+- 全链路求职赋能包（面试题库、简历优化、晋升指导）
+- 线下技术沙龙 & 人脉网络
+
+**学AI测试：真正落地，拒绝空谈**
+- 从0到1实战落地体系（Skills、MCP、RAG、AI IDE等）
+- 独家自研资料与工具矩阵
+- 前沿技术同步与提效方案
+
+### 知识库
+
+- [踩坑合集](https://vcnvmnln7wit.feishu.cn/wiki/CjV9wG8IHiIpWikCdFEcxfErnne)
+- [商业化案例库](https://vcnvmnln7wit.feishu.cn/wiki/LdIxwlrKGibFEVkWMocc2K9KnBh)
+- [科普专栏](https://vcnvmnln7wit.feishu.cn/wiki/K1RPwM8zji9ZchkxlOmcivUgnJe)
+- [Open Build](https://vcnvmnln7wit.feishu.cn/wiki/CThswol0PiNJJbkhgT1cZIxanLb)
+- [LLM/Agent/研究报告知识库](https://vcnvmnln7wit.feishu.cn/wiki/KwGQwS2TciT2EdkSBBtcYnbsnSd)
+- [Skill封装合集](https://vcnvmnln7wit.feishu.cn/wiki/PDfpwqJZUibTyBkUa7TcZZ6Onpd)
+- [社区治理运营知识库](https://vcnvmnln7wit.feishu.cn/wiki/MSEGwrdnTiiF9Dk8qCVcNW6InJg)
+
+### 加入社群
+
+| 社群 | 链接 |
+|------|------|
+| AI探索交流1区 | [加入](https://applink.feishu.cn/client/chat/chatter/add_by_link?link_token=074vd565-6084-455c-ac52-9703e89a0697) |
+| AI探索交流2区 | [加入](https://applink.feishu.cn/client/chat/chatter/add_by_link?link_token=60bj94f0-1a67-48a7-abbb-9172b161c2b0) |
+| AI探索交流3区 | [加入](https://applink.feishu.cn/client/chat/chatter/add_by_link?link_token=13do1920-db46-4444-b635-005680beaf58) |
+| AI探索交流4区 | [加入](https://applink.feishu.cn/client/chat/chatter/add_by_link?link_token=f17o1b86-06f6-4f10-911a-69a299a25fe3) |
+| AI探索交流5区 | [加入](https://applink.feishu.cn/client/chat/chatter/add_by_link?link_token=2bbh6ab6-22c2-4753-b973-74bb1a2edcc9) |
+| AI探索交流6区 | [加入](https://applink.feishu.cn/client/chat/chatter/add_by_link?link_token=d19r19f7-2f47-42ba-b1ec-cb0342cf2e80) |
+| AI探索交流7区 | [加入](https://applink.feishu.cn/client/chat/chatter/add_by_link?link_token=fe9vdacc-7316-4b4d-ae4a-fdbcf56315e6) |
+| AI探索交流8区 | [加入](https://applink.feishu.cn/client/chat/chatter/add_by_link?link_token=103kfae8-1fd7-424f-984f-d66c210e42d1) |
+| AI探索交流9区 | [加入](https://applink.feishu.cn/client/chat/chatter/add_by_link?link_token=239p3cad-2f83-4baa-a230-f40386067548) |
+| AI探索交流10区 | [加入](https://applink.feishu.cn/client/chat/chatter/add_by_link?link_token=880r7cf5-3638-45ff-afb9-7944de991872) |
+| AI探索交流-网文作家 | [加入](https://applink.feishu.cn/client/chat/chatter/add_by_link?link_token=6a3v579b-ab43-4e1a-87f9-be63bab88da7) |
+| AI探索交流群-音乐达人 | [加入](https://applink.feishu.cn/client/chat/chatter/add_by_link?link_token=76at299e-73da-4eeb-9eba-32161e98f2f8) |
+| AI探索交流群-微笑驿站 | [加入](https://applink.feishu.cn/client/chat/chatter/add_by_link?link_token=f2av73d0-6bb4-4a9f-9095-5fbbe83e49ec) |
+
+---
+
+*AtomCollide-智械工坊团队出品*
+

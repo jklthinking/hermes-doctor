@@ -2,7 +2,7 @@
 name: prescription-match
 description: Match pasted Hermes errors, logs, or symptoms to the Hermes Doctor prescription library.
 version: 0.1.3
-author: AtomCollide-AI-陈宇锋团队
+author: AtomCollide-智械工坊团队
 tags: [hermes, doctor, prescription]
 requires_tools: [terminal, read_file]
 requires_toolsets: [terminal, file]

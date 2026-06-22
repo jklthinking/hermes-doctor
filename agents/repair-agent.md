@@ -2,7 +2,7 @@
 name: repair-agent
 description: Hermes Doctor 修复 Agent: 把药方转成修复计划，默认不执行。
 version: 0.1.3
-author: AtomCollide-AI-陈宇锋团队
+author: AtomCollide-智械工坊团队
 requires_skills: [prescription-match, repair-plan]
 ---
 

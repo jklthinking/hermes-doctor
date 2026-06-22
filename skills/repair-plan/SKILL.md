@@ -2,7 +2,7 @@
 name: repair-plan
 description: Generate confirmation-ready Hermes Doctor repair plans without executing repairs.
 version: 0.1.3
-author: AtomCollide-AI-陈宇锋团队
+author: AtomCollide-智械工坊团队
 tags: [hermes, doctor, repair]
 requires_tools: [terminal, read_file]
 requires_toolsets: [terminal, file]
