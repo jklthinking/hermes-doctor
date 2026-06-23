@@ -1,6 +1,6 @@
 ---
 name: hermes-doctor
-description: Hermes Agent 自诊断与安全自愈插件。用于 Hermes 插件、Agent、工具调用、运行时、配置、日志、飞书消息路由的体检、药方匹配、修复计划、病历记录、问题复盘和凭证完整性检查。
+description: "Hermes Agent自诊断与安全自愈插件。用于Agent体检、药方匹配、修复计划、病历记录、凭证完整性检查。当需要检查Agent健康状态、运行自诊断、修复配置问题时使用。"
 version: 0.2.0
 author: AtomCollide-智械工坊团队
 tags: [hermes, doctor, diagnosis, self-healing, agent, credential-integrity]
@@ -16,6 +16,8 @@ triggers:
 ---
 
 # Hermes Doctor
+
+> 📖 详细文档见 `references/` 目录
 
 Hermes Doctor 是基于 Hermes 自身插件框架重构的 Agent 医生。功能目标对齐皮皮虾医生 PRD，但实现形态属于 Hermes：`.hermes-skill` 插件 manifest、主 `SKILL.md`、子 `skills/`、`agents/`、本地 CLI 和 references 文档。
 
@@ -104,3 +106,12 @@ print(f"风险等级: {report['risk_level']}")
 - 不收集 cookie、token、password、private key、session storage。
 - 不绕过登录、验证码、反爬或限流。
 - 删除、覆盖、reset、读取秘密信息属于 L3，默认只给人工计划。
+
+## 工作流
+
+使用此技能时，按以下步骤执行：
+- [ ] 1. 确认用户需求和使用场景
+- [ ] 2. 加载相关代码和配置
+- [ ] 3. 执行核心功能
+- [ ] 4. 验证输出结果
+- [ ] 5. 反馈给用户
