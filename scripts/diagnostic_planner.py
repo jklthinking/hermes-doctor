@@ -3,7 +3,6 @@
 白龙马医生-Hermes Doctor · Diagnostic Workflow Planner
 AtomCollide-智械工坊 · 2026
 
-融合自 Dify (145K⭐, +98) 的 Workflow Generator 模式:
 planner→builder→postproc 三阶段管线。
 
 功能:

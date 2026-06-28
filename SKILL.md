@@ -38,6 +38,15 @@ Hermes Doctor 是基于 Hermes 自身插件框架重构的 Agent 医生。功能
 - 用户要修的是 皮皮虾医生本体
 - 需要绕过登录、验证码、反爬或限流保护
 
+## 核心能力
+
+- **Agent体检**：插件结构/运行线索/日志/工具的只读检查
+- **药方匹配**：错误文本→药方库自动匹配
+- **修复计划**：生成修复计划（不自动执行）
+- **病历记录**：脱敏病历写入与查询
+- **凭证完整性**：检测硬编码凭证/格式验证/占位符检测
+- **飞书路由**：飞书消息→本地诊断动作
+
 ## Core Loop
 
 1. Inspect: 只读收集证据。
@@ -73,7 +82,6 @@ python3 scripts/hermes_doctor.py test --target .
 
 ## Credential Integrity Check (NEW)
 
-融合自 langgenius/dify 的凭证完整性验证机制。
 
 ```python
 from modules.credential_integrity import CredentialIntegrityChecker

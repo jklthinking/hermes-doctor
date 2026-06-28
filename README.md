@@ -369,7 +369,6 @@ bailongma-doctor test --target .            # 预期: summary: 14/14 passed
 
 ## 🔐 凭证完整性检查 (NEW)
 
-融合自 langgenius/dify 的凭证完整性验证机制。
 
 **检测能力**:
 - 凭证存在性检查
