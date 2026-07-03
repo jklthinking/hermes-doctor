@@ -1,4 +1,4 @@
-from diagnostics.orchestration_runtime_check import diagnose_flow_log, diagnose_pending_events, diagnose_transition_drift
+from diagnostics.agent_runtime_diagnostics import diagnose_flow_log, diagnose_pending_events, diagnose_transition_drift
 
 
 def test_transition_drift_detects_mismatch():

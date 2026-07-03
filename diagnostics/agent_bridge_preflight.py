@@ -1,4 +1,4 @@
-"""Bridge preflight diagnostics for Feishu/Lark coding-agent runtimes."""
+"""Agent bridge preflight diagnostics for Hermes runtime handoffs."""
 from __future__ import annotations
 from dataclasses import dataclass
 from pathlib import Path

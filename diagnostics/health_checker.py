@@ -1,6 +1,5 @@
 """Health Checker - 健康端点监控
 
-融合自 dify 的 /health 端点和 /threads、/db-pool-stat 监控能力。
 提供 Agent 运行时健康状态检查、线程监控、连接池统计。
 """
 
@@ -28,7 +27,7 @@ class HealthStatus:
 class HealthChecker:
     """Agent 健康检查器
     
-    提供类似 dify /health 端点的诊断能力：
+    提供 Agent 运行时健康诊断能力：
     - 进程状态 (PID, status, version)
     - 线程监控 (active threads, alive status)
     - 内存使用统计

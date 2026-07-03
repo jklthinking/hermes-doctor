@@ -490,7 +490,7 @@ AtomCollide-智械工坊团队出品。更多产品见：[AtomCollide Product Ma
 ## Lark Coding Agent Bridge 融合增强
 
 - 白龙马医生新增 Bridge Preflight Doctor：agent binary、workspace、profile-local lark-cli 三层诊断。
-- 新增模块：`diagnostics/bridge_preflight.py`
+- 新增模块：`diagnostics/agent_bridge_preflight.py`
 - 来源模式：飞书/Lark 消息入口、本地 Claude/Codex 执行、会话 fingerprint、profile 隔离与安全门禁。
 
 ## Generic orchestration diagnostics
