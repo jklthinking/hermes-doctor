@@ -1,7 +1,7 @@
 ---
 name: hermes-doctor
 description: "Hermes Agent自诊断与安全自愈插件。用于Agent体检、药方匹配、修复计划、病历记录、凭证完整性检查。当需要检查Agent健康状态、运行自诊断、修复配置问题时使用。"
-version: 0.3.0
+version: 1.1.0
 author: AtomCollide-智械工坊团队
 tags: [hermes, doctor, diagnosis, self-healing, agent, credential-integrity]
 requires_tools: [read_file, write_file, patch, search_files, terminal, clarify]
@@ -123,3 +123,8 @@ print(f"风险等级: {report['risk_level']}")
 - [ ] 3. 执行核心功能
 - [ ] 4. 验证输出结果
 - [ ] 5. 反馈给用户
+
+## 2026-07-03 运行时增强
+
+- 新增诊断事件 session/trace 连续性探针，定位医生链路中的上下文丢失点。
+- 验证：新增模块通过 py_compile 和定向 pytest，代码不依赖外部服务。

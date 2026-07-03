@@ -463,3 +463,8 @@ AtomCollide-智械工坊团队出品。更多产品见：[AtomCollide Product Ma
 - [CONTRIBUTING](CONTRIBUTING.md)
 
 
+
+## 2026-07-03 运行时增强
+
+- 新增诊断事件 session/trace 连续性探针，定位医生链路中的上下文丢失点。
+- 交付物包含可导入模块与定向单元测试。
