@@ -1,7 +1,7 @@
 ---
 name: hermes-doctor
 description: "Hermes Agent自诊断与安全自愈插件。用于Agent体检、药方匹配、修复计划、病历记录、凭证完整性检查。当需要检查Agent健康状态、运行自诊断、修复配置问题时使用。"
-version: 1.1.0
+version: 1.2.0
 author: AtomCollide-智械工坊团队
 tags: [hermes, doctor, diagnosis, self-healing, agent, credential-integrity]
 requires_tools: [read_file, write_file, patch, search_files, terminal, clarify]
@@ -16,6 +16,10 @@ triggers:
 ---
 
 # Hermes Doctor
+
+## Sandbox Runtime Context（v1.2.0）
+
+新增 `diagnostics/agent_sandbox_runtime_context.py`：生成脱敏的 Agent 沙盒运行环境摘要，暴露 profile、workspace、toolsets、写入边界和非阻断/阻断诊断，用于修复前先拿到上下文。
 
 > 📖 详细文档见 `references/` 目录
 

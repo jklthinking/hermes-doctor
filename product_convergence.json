@@ -11,7 +11,8 @@
     "diagnostics/agent_runtime_diagnostics.py",
     "diagnostics/agent_bridge_preflight.py",
     "scripts/hermes_doctor.py",
-    "scripts/product_convergence_gate.py"
+    "scripts/product_convergence_gate.py",
+    "diagnostics/agent_sandbox_runtime_context.py"
   ],
   "known_external_reference_files": [
     "diagnostics/__init__.py",
@@ -27,6 +28,7 @@
   "policy": "Cross-cutting runtime/bridge/workflow modules must be domain-mapped and referenced by declared entrypoints or smoke targets; generic orphan modules fail the convergence gate.",
   "domain_mappings": {
     "diagnostics/agent_runtime_diagnostics.py": "Hermes Agent runtime event-flow diagnostics",
-    "diagnostics/agent_bridge_preflight.py": "Hermes Agent bridge preflight checks for workspace and profile isolation"
+    "diagnostics/agent_bridge_preflight.py": "Hermes Agent bridge preflight checks for workspace and profile isolation",
+    "diagnostics/agent_sandbox_runtime_context.py": "Hermes Doctor sandbox runtime context endpoint for redacted pre-repair diagnostics"
   }
 }
