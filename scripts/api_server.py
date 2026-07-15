@@ -15,13 +15,13 @@ from dataclasses import asdict
 from typing import Any
 
 from history_store import DoctorHistory, latest_runs, save_run
+from doctor import ROOT, collect_run_report
+from mem0_bridge import collect_mem0_records
 
 try:
     from fastapi import FastAPI
 except Exception:
     FastAPI = None  # type: ignore
-
-from doctor import ROOT, collect_run_report
 
 
 def build_app() -> Any:
@@ -57,6 +57,16 @@ def build_app() -> Any:
     @app.get("/diag/latest")
     def diag_latest(limit: int = 10):
         return [asdict(item) for item in latest_runs(limit=limit, db_path=os.getenv("HERMES_DOCTOR_HISTORY_DB", "~/.hermes_doctor_cache/doctor_history.sqlite3"))]
+
+    @app.get("/diag/mem0")
+    def diag_mem0(limit: int = 20):
+        return {
+            "provider": "hermes-doctor",
+            "memory": collect_mem0_records(
+                limit=limit,
+                db_path=os.getenv("HERMES_DOCTOR_HISTORY_DB", "~/.hermes_doctor_cache/doctor_history.sqlite3"),
+            ),
+        }
 
     @app.post("/doctor/run")
     def run_smoke() -> dict[str, Any]:

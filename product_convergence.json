@@ -29,6 +29,7 @@
   "domain_mappings": {
     "diagnostics/agent_runtime_diagnostics.py": "Hermes Agent runtime event-flow diagnostics",
     "diagnostics/agent_bridge_preflight.py": "Hermes Agent bridge preflight checks for workspace and profile isolation",
-    "diagnostics/agent_sandbox_runtime_context.py": "Hermes Doctor sandbox runtime context endpoint for redacted pre-repair diagnostics"
+    "diagnostics/agent_sandbox_runtime_context.py": "Hermes Doctor sandbox runtime context endpoint for redacted pre-repair diagnostics",
+    "scripts/mem0_bridge.py": "Mem0-compatible history export bridge for convergence telemetry"
   }
 }

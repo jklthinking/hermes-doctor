@@ -13,6 +13,7 @@ def check(name: str, ok: bool, fix: str="") -> bool:
     return ok
 
 
+
 def collect_run_report(root: Path | None = None) -> dict:
     root = root or ROOT
     checks: list[dict] = []
@@ -39,6 +40,19 @@ def collect_run_report(root: Path | None = None) -> dict:
             ok &= check('package.json parseable', False, f'JSON 解析失败: {exc}')
     else:
         print('[INFO] package.json absent; shell/python one-click path is primary')
+
+    # --- mem0 bridge smoke check ---
+    bridge = root / 'scripts' / 'mem0_bridge.py'
+    if bridge.exists():
+        try:
+            script_cmd = [sys.executable, str(bridge), '--target', str(root), '--limit', '5', '--json']
+            subprocess.check_call(script_cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            add('mem0 compatibility bridge', True)
+        except Exception:
+            add('mem0 compatibility bridge', False, '运行 python3 scripts/mem0_bridge.py --json 验证 mem0 导出能力')
+    else:
+        add('mem0 compatibility bridge', False, '补充 scripts/mem0_bridge.py')
+
 
     gate = root/'scripts/product_convergence_gate.py'
     if gate.exists():
