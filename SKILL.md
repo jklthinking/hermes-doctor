@@ -144,7 +144,8 @@ print(f"风险等级: {report['risk_level']}")
 
 - `install.sh`：用户的一条命令安装与冒烟入口。
 - `scripts/setup.py`：安装声明依赖并串联 doctor。
-- `scripts/doctor.py`：检查 README、SKILL、入口脚本、package scripts 与产品收敛门禁。
+- `scripts/hermes_doctor.py`：统一 CLI（check/match/plan/record/search/route/validate/test）。
+- `scripts/doctor.py`：开箱 readiness 门禁（README/SKILL/入口脚本/package scripts 收敛检查）。
 - `scripts/smoke.py`：运行 doctor、产品收敛门禁与 Python 编译级冒烟。
 - `tests/test_one_click_open_box.py`：契约测试，防止 README 写了但脚本缺失。
 
