@@ -6,7 +6,14 @@ import os
 # Ensure project root is on path
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
-from scripts.hermes_doctor import main  # noqa: E402
+from scripts.hermes_doctor import main as _main  # noqa: E402
+
+
+
+def main() -> None:
+    """Entry point."""
+    _main()
+
 
 if __name__ == '__main__':
     main()
